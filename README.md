@@ -77,11 +77,8 @@ microk8s kubectl apply -f backend-hpa.yaml>
 
 4. Acessar o jogo
 Depois que a aplicação for implantada, você pode acessar o jogo no seguinte endereço:
-
-   ```bash
+   
 http://localhost:31706
-
-   ```
 
 ## Observações
 
