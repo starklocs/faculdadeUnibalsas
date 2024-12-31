@@ -29,8 +29,9 @@ Antes de começar, você precisa ter os seguintes itens instalados:
 
 ### 1. Clonar o repositório
 
-
+```
 git clone <URL_DO_REPOSITORIO>
+```
 
 ### 2. Construir e enviar as imagens Docker
 
@@ -38,43 +39,51 @@ git clone <URL_DO_REPOSITORIO>
 
 1. Navegue até o diretório do frontend:
 
-
-<cd frontend>
+   ```bash
+    cd frontend
+   ```
 
 2. Construa a imagem Docker e envie para o Docker Hub:
 
-
-<docker build -t starklocs14/frontend:latest .>
-<docker push starklocs14/frontend:latest>
+   ```bash
+    docker build -t starklocs14/frontend:latest .
+    docker push starklocs14/frontend:latest
+   ```
 
 Backend
 Navegue até o diretório do backend:
 
-<cd ../backend>
-
+   ```bash
+    cd ../backend
+   ```
 
 Construa a imagem Docker e envie para o Docker Hub:
 
-<docker build -t starklocs14/backend:latest .>
-<docker push starklocs14/backend:latest>
+   ```bash
+    docker build -t starklocs14/backend:latest .
+    docker push starklocs14/backend:latest
 
+   ```
 3. Implantar a aplicação no Kubernetes
 Utilize o MicroK8s para implantar os recursos no Kubernetes. Execute os seguintes comandos:
 
-
-<microk8s kubectl apply -f backend-deployment.yaml
+  ```bash
+microk8s kubectl apply -f backend-deployment.yaml
 microk8s kubectl apply -f backend-service.yaml
 microk8s kubectl apply -f frontend-deployment.yaml
 microk8s kubectl apply -f frontend-service.yaml
 microk8s kubectl apply -f backend-hpa.yaml>
+   ```
 
 4. Acessar o jogo
 Depois que a aplicação for implantada, você pode acessar o jogo no seguinte endereço:
 
-
+   ```bash
 <http://localhost:31706>
 
-Observações
+   ```
+
+## Observações
 
 Certifique-se de ter o MicroK8s instalado e configurado corretamente.
 Ajuste as configurações do banco de dados no arquivo backend-deployment.yaml de acordo com o seu ambiente.
